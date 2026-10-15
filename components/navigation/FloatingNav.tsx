@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   User,
   Briefcase,
@@ -9,11 +11,10 @@ import {
   Mail,
   Github,
   Linkedin,
-  Copy,
-  Check
+  Check,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { PERSONAL_INFO } from '../data/cv-data';
+import { PERSONAL_INFO } from '@/data/cv-data';
 
 interface NavItem {
   id: string;
@@ -69,7 +70,7 @@ export const FloatingNav: React.FC = () => {
       particleCount: 40,
       spread: 60,
       origin: { x, y },
-      colors: ['#ffffff', '#10b981', '#60a5fa']
+      colors: ['#ffffff', '#10b981', '#60a5fa'],
     });
 
     setTimeout(() => setCopied(false), 2000);
@@ -132,7 +133,7 @@ export const FloatingNav: React.FC = () => {
         {/* Copy Email Confetti */}
         <button
           onClick={handleCopyEmail}
-          className="p-2 rounded-full text-[#888888] hover:text-emerald-400 hover:bg-[#252525] transition-colors relative"
+          className="p-2 rounded-full text-[#888888] hover:text-emerald-400 hover:bg-[#252525] transition-colors relative cursor-pointer"
           title="Copy Email"
         >
           {copied ? (

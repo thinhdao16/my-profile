@@ -1,8 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { PROJECTS } from '../data/cv-data';
-import { ProjectItem } from '../types';
+import { PROJECTS } from '@/data/cv-data';
+import { ProjectItem } from '@/types';
 import { ProjectModal } from './ProjectModal';
 
 export const Projects: React.FC = () => {

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -21,9 +23,9 @@ interface TechBadge {
 
 const ROW_1: TechBadge[] = [
   { name: ".NET 8 / C#", category: "Backend", icon: <Server className="h-5 w-5 text-indigo-400" /> },
-  { name: "React", category: "Frontend", icon: <Code2 className="h-5 w-5 text-cyan-400" /> },
+  { name: "React 19", category: "Frontend", icon: <Code2 className="h-5 w-5 text-cyan-400" /> },
   { name: "TypeScript", category: "Language", icon: <Terminal className="h-5 w-5 text-blue-400" /> },
-  { name: "Next.js", category: "Full-stack", icon: <Globe className="h-5 w-5 text-white" /> },
+  { name: "Next.js 15 (App Router)", category: "Full-stack", icon: <Globe className="h-5 w-5 text-white" /> },
   { name: "Node.js (NestJS)", category: "Backend", icon: <Server className="h-5 w-5 text-emerald-400" /> },
   { name: "PostgreSQL", category: "Database", icon: <Database className="h-5 w-5 text-blue-500" /> },
   { name: "Docker", category: "DevOps", icon: <Box className="h-5 w-5 text-sky-400" /> },

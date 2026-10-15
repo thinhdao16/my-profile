@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Award, Calendar, CheckCircle2 } from 'lucide-react';
-import { EDUCATION, CERTIFICATES } from '../data/cv-data';
+import { EDUCATION, CERTIFICATES } from '@/data/cv-data';
 
 export const EducationCertificates: React.FC = () => {
   return (

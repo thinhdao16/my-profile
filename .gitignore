@@ -11,6 +11,8 @@ lerna-debug.log*
 node_modules/
 
 # Production build
+.next/
+out/
 dist/
 dist-ssr/
 

@@ -1,15 +1,17 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Calendar, MapPin } from 'lucide-react';
-import { EXPERIENCES } from '../data/cv-data';
+import { ChevronDown, Calendar } from 'lucide-react';
+import { EXPERIENCES } from '@/data/cv-data';
 
 export const Experience: React.FC = () => {
   // Default open the first and second experience
   const [openIds, setOpenIds] = useState<string[]>(['hongthai', 'fpt-software-fs']);
 
   const toggleAccordion = (id: string) => {
-    setOpenIds(prev => 
-      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
+    setOpenIds((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
 
@@ -45,7 +47,11 @@ export const Experience: React.FC = () => {
               >
                 <div className="flex w-full min-w-0 items-center gap-3.5 pr-3">
                   {/* Company Monogram Badge */}
-                  <div className={`h-10 w-10 shrink-0 rounded-xl bg-gradient-to-br ${exp.logoBg || 'from-neutral-700 to-neutral-900'} flex items-center justify-center font-bold text-xs text-white shadow-md select-none`}>
+                  <div
+                    className={`h-10 w-10 shrink-0 rounded-xl bg-gradient-to-br ${
+                      exp.logoBg || 'from-neutral-700 to-neutral-900'
+                    } flex items-center justify-center font-bold text-xs text-white shadow-md select-none`}
+                  >
                     {exp.logoText}
                   </div>
 

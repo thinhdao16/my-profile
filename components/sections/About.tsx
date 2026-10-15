@@ -1,11 +1,14 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PERSONAL_INFO } from '../data/cv-data';
+import { PERSONAL_INFO } from '@/data/cv-data';
 import { Layers, ShieldCheck, Zap, Cloud } from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
     <motion.section 
+      id="about"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

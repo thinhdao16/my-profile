@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
@@ -16,7 +18,6 @@ export const ActivityCalendar: React.FC = () => {
     const result: DayData[][] = [];
     let total = 0;
 
-    // Seeded random-like generation to have realistic activity patterns
     const startDate = new Date(2026, 0, 1);
     const dayOfWeek = startDate.getDay(); // 0 is Sunday
     
@@ -27,10 +28,7 @@ export const ActivityCalendar: React.FC = () => {
         const currentDate = new Date(startDate);
         currentDate.setDate(startDate.getDate() + (w * 7 + d - dayOfWeek));
 
-        // Skip future dates if beyond late 2026
         const dateStr = currentDate.toISOString().split('T')[0];
-        
-        // Realistic distribution: weekdays more active, weekends lighter
         const isWeekend = d === 0 || d === 6;
         const seed = (w * 13 + d * 7 + 17) % 100;
         let count = 0;
@@ -84,6 +82,7 @@ export const ActivityCalendar: React.FC = () => {
 
   return (
     <motion.section 
+      id="activity"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -131,7 +130,7 @@ export const ActivityCalendar: React.FC = () => {
 
           {/* Legend and Footer */}
           <div className="mt-4 flex flex-wrap items-center justify-between text-[11px] text-neutral-400 font-mono">
-            <span>Learn how we count contributions</span>
+            <span>Engineering contributions in 2026</span>
             <div className="flex items-center gap-1.5">
               <span>Less</span>
               <span className="h-2.5 w-2.5 rounded-xs" style={{ backgroundColor: 'hsl(0, 0%, 22%)' }} />

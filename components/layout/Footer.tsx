@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
-import { ArrowUp, Heart, Code2 } from 'lucide-react';
-import { PERSONAL_INFO } from '../data/cv-data';
+import { ArrowUp } from 'lucide-react';
+import { PERSONAL_INFO } from '@/data/cv-data';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -16,7 +18,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.
           </p>
           <p className="text-[#555555]">
-            Built with React, TypeScript & Tailwind CSS
+            Built with Next.js 15, React 19 & Tailwind CSS
           </p>
         </div>
 
@@ -29,7 +31,7 @@ export const Footer: React.FC = () => {
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#222222] hover:bg-[#2c2c2c] text-[#888888] hover:text-[#dddddd] border border-[#2e2e2e] transition-all"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#222222] hover:bg-[#2c2c2c] text-[#888888] hover:text-[#dddddd] border border-[#2e2e2e] transition-all cursor-pointer"
             aria-label="Back to top"
           >
             <span>Top</span>

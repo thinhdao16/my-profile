@@ -1,8 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Copy, Check, ArrowUpRight, MessageSquare, Send } from 'lucide-react';
+import { Mail, Copy, Check, ArrowUpRight, Send } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { PERSONAL_INFO } from '../data/cv-data';
+import { PERSONAL_INFO } from '@/data/cv-data';
 
 export const ContactCTA: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -20,7 +22,7 @@ export const ContactCTA: React.FC = () => {
       particleCount: 50,
       spread: 60,
       origin: { x, y },
-      colors: ['#ffffff', '#10b981', '#60a5fa', '#f59e0b']
+      colors: ['#ffffff', '#10b981', '#60a5fa', '#f59e0b'],
     });
 
     setTimeout(() => setCopied(false), 2500);
@@ -58,7 +60,7 @@ export const ContactCTA: React.FC = () => {
           {/* Copy Email Button with confetti */}
           <button
             onClick={handleCopyEmail}
-            className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-[#242424] text-[#cccccc] hover:text-white border border-[#383838] hover:border-[#555555] hover:bg-[#2c2c2c] transition-all text-sm font-mono"
+            className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-[#242424] text-[#cccccc] hover:text-white border border-[#383838] hover:border-[#555555] hover:bg-[#2c2c2c] transition-all text-sm font-mono cursor-pointer"
             title="Copy email address"
           >
             {copied ? (

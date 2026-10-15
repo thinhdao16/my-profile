@@ -1,8 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Phone, FileText, Check, ArrowRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { PERSONAL_INFO } from '../data/cv-data';
+import { PERSONAL_INFO } from '@/data/cv-data';
 
 export const Header: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -12,9 +14,10 @@ export const Header: React.FC = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
     setCopied(true);
     confetti({
-      particleCount: 40,
+      particleCount: 45,
       spread: 60,
-      origin: { y: 0.3 }
+      origin: { y: 0.3 },
+      colors: ['#ffffff', '#10b981', '#60a5fa', '#f59e0b'],
     });
     setTimeout(() => setCopied(false), 2000);
   };
@@ -49,7 +52,7 @@ export const Header: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Profile Avatar */}
+        {/* Profile Avatar Monogram */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -62,10 +65,10 @@ export const Header: React.FC = () => {
                 DT
               </span>
             </div>
-            {/* Status Indicator */}
+            {/* Live Status Indicator */}
             <span 
               className="absolute bottom-1 right-1 h-4 w-4 rounded-full bg-emerald-500 ring-2 ring-[#1b1b1b]" 
-              title="Available for opportunities"
+              title="Open to Work & Collaborations"
             />
           </div>
         </motion.div>
@@ -90,7 +93,7 @@ export const Header: React.FC = () => {
             <span className="h-1 w-1 rounded-full bg-neutral-500"></span>
             <span className="text-xs text-neutral-400">.NET 8 & React</span>
             <span className="h-1 w-1 rounded-full bg-neutral-500"></span>
-            <span className="text-xs text-neutral-400">HCMC, VN</span>
+            <span className="text-xs text-neutral-400">{PERSONAL_INFO.location}</span>
           </div>
 
           <button 
@@ -129,7 +132,7 @@ export const Header: React.FC = () => {
             <Linkedin className="h-4 w-4" />
           </a>
 
-          {/* Email / Copy */}
+          {/* Email / Copy with Confetti */}
           <button 
             type="button"
             onClick={handleCopyEmail}
@@ -150,7 +153,7 @@ export const Header: React.FC = () => {
             <Phone className="h-4 w-4" />
           </a>
 
-          {/* Resume PDF */}
+          {/* Resume PDF Download */}
           <a 
             href="/Dao_Duc_Thinh_CV.pdf" 
             target="_blank"
