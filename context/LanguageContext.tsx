@@ -106,15 +106,14 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>('en');
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     // Check localStorage first
     const saved = localStorage.getItem('portfolio_lang') as Language;
     if (saved === 'en' || saved === 'vi') {
       setLanguageState(saved);
-    } else {
-      // Default to English as requested
-      setLanguageState('en');
     }
   }, []);
 
@@ -127,11 +126,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setLanguage(language === 'en' ? 'vi' : 'en');
   };
 
+  const activeLanguage = isMounted ? language : 'en';
+
   const value: LanguageContextType = {
-    language,
+    language: activeLanguage,
     setLanguage,
     toggleLanguage,
-    t: UI_TRANSLATIONS[language],
+    t: UI_TRANSLATIONS[activeLanguage],
   };
 
   return (

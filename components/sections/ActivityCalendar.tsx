@@ -104,9 +104,9 @@ export const ActivityCalendar: React.FC = () => {
       </p>
 
       {/* Calendar SVG Grid Container */}
-      <div className="my-4 overflow-x-auto invisible-scrollbar pb-2 pt-1">
-        <div className="min-w-[690px] p-4 rounded-xl bg-neutral-900/40 border border-white/5 relative">
-          <svg width="685" height="110" viewBox="0 0 685 110" className="overflow-visible block mx-auto">
+      <div className="my-4 overflow-x-auto invisible-scrollbar pb-2 pt-1" suppressHydrationWarning>
+        <div className="min-w-[690px] p-4 rounded-xl bg-neutral-900/40 border border-white/5 relative" suppressHydrationWarning>
+          <svg width="685" height="110" viewBox="0 0 685 110" className="overflow-visible block mx-auto" suppressHydrationWarning>
             {weeks.map((week, wIndex) => (
               <g key={wIndex} transform={`translate(${wIndex * 13}, 0)`}>
                 {week.map((day, dIndex) => (

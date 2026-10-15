@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Left: Identity & Copyright */}
         <div className="space-y-1 text-center sm:text-left">
-          <p className="text-[#888888]">
+          <p className="text-[#888888]" suppressHydrationWarning>
             © {new Date().getFullYear()} {PERSONAL_INFO.name}. {t.footerRights}
           </p>
           <p className="text-[#555555]">

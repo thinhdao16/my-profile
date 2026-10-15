@@ -159,6 +159,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`dark ${instrumentSerif.variable} ${rubik.variable}`}
     >
       <head>
@@ -168,7 +169,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#1b1b1b] text-[#eaeaea] selection:bg-emerald-500/25 selection:text-emerald-300 font-sans antialiased overflow-x-hidden min-h-screen">
+      <body
+        suppressHydrationWarning
+        className="bg-[#1b1b1b] text-[#eaeaea] selection:bg-emerald-500/25 selection:text-emerald-300 font-sans antialiased overflow-x-hidden min-h-screen"
+      >
         <Providers>{children}</Providers>
       </body>
     </html>
