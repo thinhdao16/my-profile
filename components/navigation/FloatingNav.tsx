@@ -12,32 +12,28 @@ import {
   Github,
   Linkedin,
   Check,
+  Languages,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PERSONAL_INFO } from '@/data/cv-data';
-
-interface NavItem {
-  id: string;
-  label: string;
-  icon: React.ElementType;
-  href: string;
-}
-
-const NAV_ITEMS: NavItem[] = [
-  { id: 'about', label: 'About', icon: User, href: '#about' },
-  { id: 'experience', label: 'Experience', icon: Briefcase, href: '#experience' },
-  { id: 'tech', label: 'Tech Stack', icon: Cpu, href: '#tech' },
-  { id: 'projects', label: 'Projects', icon: Layers, href: '#projects' },
-  { id: 'education', label: 'Education', icon: GraduationCap, href: '#education' },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export const FloatingNav: React.FC = () => {
   const [activeSection, setActiveSection] = useState('about');
   const [copied, setCopied] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
+
+  const navItems = [
+    { id: 'about', label: t.navAbout, icon: User, href: '#about' },
+    { id: 'experience', label: t.navExperience, icon: Briefcase, href: '#experience' },
+    { id: 'tech', label: t.navTech, icon: Cpu, href: '#tech' },
+    { id: 'projects', label: t.navProjects, icon: Layers, href: '#projects' },
+    { id: 'education', label: t.navEducation, icon: GraduationCap, href: '#education' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = NAV_ITEMS.map((item) => item.id);
+      const sections = ['about', 'experience', 'tech', 'projects', 'education'];
       const scrollPos = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -85,7 +81,7 @@ export const FloatingNav: React.FC = () => {
         className="flex items-center gap-1 sm:gap-2 px-3 py-2 rounded-full bg-[#181818]/90 backdrop-blur-xl border border-[#333333] shadow-2xl shadow-black/80"
       >
         {/* Nav Links */}
-        {NAV_ITEMS.map((item) => {
+        {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeSection === item.id;
 
@@ -105,6 +101,19 @@ export const FloatingNav: React.FC = () => {
             </a>
           );
         })}
+
+        {/* Separator */}
+        <div className="w-[1px] h-4 bg-[#333333] mx-1" />
+
+        {/* Language Toggle in Dock */}
+        <button
+          onClick={toggleLanguage}
+          className="p-2 rounded-full text-emerald-400 hover:text-white hover:bg-[#252525] transition-colors flex items-center gap-1 text-[11px] font-mono cursor-pointer"
+          title={language === 'vi' ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
+        >
+          <Languages className="w-3.5 h-3.5" />
+          <span className="font-semibold">{language.toUpperCase()}</span>
+        </button>
 
         {/* Separator */}
         <div className="w-[1px] h-4 bg-[#333333] mx-1" />
@@ -134,7 +143,7 @@ export const FloatingNav: React.FC = () => {
         <button
           onClick={handleCopyEmail}
           className="p-2 rounded-full text-[#888888] hover:text-emerald-400 hover:bg-[#252525] transition-colors relative cursor-pointer"
-          title="Copy Email"
+          title={t.copyEmail}
         >
           {copied ? (
             <Check className="w-4 h-4 text-emerald-400" />

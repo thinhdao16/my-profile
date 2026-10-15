@@ -3,9 +3,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PERSONAL_INFO } from '@/data/cv-data';
+import { useLanguage } from '@/context/LanguageContext';
 import { Layers, ShieldCheck, Zap, Cloud } from 'lucide-react';
 
 export const About: React.FC = () => {
+  const { language } = useLanguage();
+
   return (
     <motion.section 
       id="about"
@@ -16,7 +19,7 @@ export const About: React.FC = () => {
       className="pt-6 pb-8 px-4 xs:px-8 border-b border-dashed border-white/10"
     >
       <p className="max-w-3xl text-[15px] leading-relaxed text-neutral-300">
-        {PERSONAL_INFO.fullSummary}
+        {language === 'vi' ? PERSONAL_INFO.fullSummary : PERSONAL_INFO.fullSummaryEn}
       </p>
 
       {/* Highlights Bar */}

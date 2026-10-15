@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface DayData {
   date: string;
@@ -12,6 +13,7 @@ interface DayData {
 export const ActivityCalendar: React.FC = () => {
   const [hoveredDay, setHoveredDay] = useState<DayData | null>(null);
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const { language, t } = useLanguage();
 
   // Generate a realistic 52-week activity calendar for 2026
   const { weeks, totalContributions } = useMemo(() => {
@@ -19,9 +21,8 @@ export const ActivityCalendar: React.FC = () => {
     let total = 0;
 
     const startDate = new Date(2026, 0, 1);
-    const dayOfWeek = startDate.getDay(); // 0 is Sunday
+    const dayOfWeek = startDate.getDay();
     
-    // Total 52 weeks
     for (let w = 0; w < 52; w++) {
       const week: DayData[] = [];
       for (let d = 0; d < 7; d++) {
@@ -91,15 +92,15 @@ export const ActivityCalendar: React.FC = () => {
     >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-1">
         <h2 className="text-2xl xs:text-3xl text-neutral-100 italic font-instrument font-normal">
-          Engineering & GitHub Activity
+          {t.activityTitle}
         </h2>
         <span className="text-xs text-neutral-400 font-mono">
-          {totalContributions.toLocaleString()} commits & contributions
+          {totalContributions.toLocaleString()} {t.contributionsLabel}
         </span>
       </div>
 
       <p className="mb-6 max-w-2xl text-sm leading-6 text-neutral-400">
-        Consistency in shipping: code commits, open source contributions, and architecture designs.
+        {t.activitySubtitle}
       </p>
 
       {/* Calendar SVG Grid Container */}
@@ -130,15 +131,15 @@ export const ActivityCalendar: React.FC = () => {
 
           {/* Legend and Footer */}
           <div className="mt-4 flex flex-wrap items-center justify-between text-[11px] text-neutral-400 font-mono">
-            <span>Engineering contributions in 2026</span>
+            <span>{t.learnContributions}</span>
             <div className="flex items-center gap-1.5">
-              <span>Less</span>
+              <span>{t.less}</span>
               <span className="h-2.5 w-2.5 rounded-xs" style={{ backgroundColor: 'hsl(0, 0%, 22%)' }} />
               <span className="h-2.5 w-2.5 rounded-xs" style={{ backgroundColor: '#0e4429' }} />
               <span className="h-2.5 w-2.5 rounded-xs" style={{ backgroundColor: '#006d32' }} />
               <span className="h-2.5 w-2.5 rounded-xs" style={{ backgroundColor: '#26a641' }} />
               <span className="h-2.5 w-2.5 rounded-xs" style={{ backgroundColor: '#39d353' }} />
-              <span>More</span>
+              <span>{t.more}</span>
             </div>
           </div>
         </div>
@@ -151,8 +152,12 @@ export const ActivityCalendar: React.FC = () => {
           style={{ left: `${tooltipPos.x}px`, top: `${tooltipPos.y}px` }}
         >
           {hoveredDay.count > 0 
-            ? `${hoveredDay.count} contributions on ${hoveredDay.date}`
-            : `No contributions on ${hoveredDay.date}`}
+            ? language === 'vi'
+              ? `${hoveredDay.count} lượt đóng góp vào ngày ${hoveredDay.date}`
+              : `${hoveredDay.count} contributions on ${hoveredDay.date}`
+            : language === 'vi'
+              ? `Không có đóng góp vào ${hoveredDay.date}`
+              : `No contributions on ${hoveredDay.date}`}
         </div>
       )}
     </motion.section>

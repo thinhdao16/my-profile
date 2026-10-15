@@ -14,40 +14,44 @@ import {
   Zap,
   Box
 } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface TechBadge {
   name: string;
   category: string;
+  categoryVi?: string;
   icon: React.ReactNode;
 }
 
 const ROW_1: TechBadge[] = [
-  { name: ".NET 8 / C#", category: "Backend", icon: <Server className="h-5 w-5 text-indigo-400" /> },
-  { name: "React 19", category: "Frontend", icon: <Code2 className="h-5 w-5 text-cyan-400" /> },
-  { name: "TypeScript", category: "Language", icon: <Terminal className="h-5 w-5 text-blue-400" /> },
-  { name: "Next.js 15 (App Router)", category: "Full-stack", icon: <Globe className="h-5 w-5 text-white" /> },
-  { name: "Node.js (NestJS)", category: "Backend", icon: <Server className="h-5 w-5 text-emerald-400" /> },
-  { name: "PostgreSQL", category: "Database", icon: <Database className="h-5 w-5 text-blue-500" /> },
-  { name: "Docker", category: "DevOps", icon: <Box className="h-5 w-5 text-sky-400" /> },
-  { name: "AWS (EC2/S3)", category: "Cloud", icon: <Cloud className="h-5 w-5 text-amber-400" /> },
-  { name: "GraphQL", category: "API", icon: <Zap className="h-5 w-5 text-pink-400" /> },
-  { name: "Redis", category: "Cache", icon: <Database className="h-5 w-5 text-red-400" /> },
+  { name: ".NET 8 / C#", category: "Backend", categoryVi: "Hệ thống lõi", icon: <Server className="h-5 w-5 text-indigo-400" /> },
+  { name: "React 19", category: "Frontend", categoryVi: "Giao diện", icon: <Code2 className="h-5 w-5 text-cyan-400" /> },
+  { name: "TypeScript", category: "Language", categoryVi: "Ngôn ngữ", icon: <Terminal className="h-5 w-5 text-blue-400" /> },
+  { name: "Next.js 15 (App Router)", category: "Full-stack", categoryVi: "Full-stack", icon: <Globe className="h-5 w-5 text-white" /> },
+  { name: "Node.js (NestJS)", category: "Backend", categoryVi: "Dịch vụ mạng", icon: <Server className="h-5 w-5 text-emerald-400" /> },
+  { name: "PostgreSQL", category: "Database", categoryVi: "Cơ sở dữ liệu", icon: <Database className="h-5 w-5 text-blue-500" /> },
+  { name: "Docker", category: "DevOps", categoryVi: "Đóng gói ứng dụng", icon: <Box className="h-5 w-5 text-sky-400" /> },
+  { name: "AWS (EC2/S3)", category: "Cloud", categoryVi: "Hạ tầng đám mây", icon: <Cloud className="h-5 w-5 text-amber-400" /> },
+  { name: "GraphQL", category: "API", categoryVi: "Giao diện API", icon: <Zap className="h-5 w-5 text-pink-400" /> },
+  { name: "Redis", category: "Cache", categoryVi: "Bộ nhớ đệm", icon: <Database className="h-5 w-5 text-red-400" /> },
 ];
 
 const ROW_2: TechBadge[] = [
-  { name: "Python & Scrapy", category: "Backend / Scraping", icon: <Terminal className="h-5 w-5 text-yellow-400" /> },
-  { name: "Vue.js", category: "Frontend", icon: <Code2 className="h-5 w-5 text-emerald-400" /> },
-  { name: "Angular", category: "Frontend", icon: <Code2 className="h-5 w-5 text-red-500" /> },
-  { name: "Ionic Mobile", category: "Mobile", icon: <Cpu className="h-5 w-5 text-blue-400" /> },
-  { name: "Tailwind CSS", category: "Styling", icon: <Layers className="h-5 w-5 text-teal-400" /> },
-  { name: "SQL Server", category: "Database", icon: <Database className="h-5 w-5 text-blue-400" /> },
-  { name: "SignalR (WebSocket)", category: "Real-time", icon: <Zap className="h-5 w-5 text-purple-400" /> },
-  { name: "Clean Architecture", category: "Design", icon: <Layers className="h-5 w-5 text-indigo-300" /> },
-  { name: "CQRS & SOLID", category: "Architecture", icon: <Layers className="h-5 w-5 text-emerald-300" /> },
-  { name: "GitHub Actions CI/CD", category: "DevOps", icon: <Box className="h-5 w-5 text-neutral-300" /> },
+  { name: "Python & Scrapy", category: "Backend / Scraping", categoryVi: "Cào & Xử lý dữ liệu", icon: <Terminal className="h-5 w-5 text-yellow-400" /> },
+  { name: "Vue.js", category: "Frontend", categoryVi: "Giao diện", icon: <Code2 className="h-5 w-5 text-emerald-400" /> },
+  { name: "Angular", category: "Frontend", categoryVi: "Giao diện", icon: <Code2 className="h-5 w-5 text-red-500" /> },
+  { name: "Ionic Mobile", category: "Mobile", categoryVi: "Di động", icon: <Cpu className="h-5 w-5 text-blue-400" /> },
+  { name: "Tailwind CSS", category: "Styling", categoryVi: "Định dạng giao diện", icon: <Layers className="h-5 w-5 text-teal-400" /> },
+  { name: "SQL Server", category: "Database", categoryVi: "Cơ sở dữ liệu", icon: <Database className="h-5 w-5 text-blue-400" /> },
+  { name: "SignalR (WebSocket)", category: "Real-time", categoryVi: "Thời gian thực", icon: <Zap className="h-5 w-5 text-purple-400" /> },
+  { name: "Clean Architecture", category: "Design", categoryVi: "Kiến trúc sạch", icon: <Layers className="h-5 w-5 text-indigo-300" /> },
+  { name: "CQRS & SOLID", category: "Architecture", categoryVi: "Mô hình thiết kế", icon: <Layers className="h-5 w-5 text-emerald-300" /> },
+  { name: "GitHub Actions CI/CD", category: "DevOps", categoryVi: "Tự động hóa CI/CD", icon: <Box className="h-5 w-5 text-neutral-300" /> },
 ];
 
 export const TechStack: React.FC = () => {
+  const { language, t } = useLanguage();
+
   return (
     <motion.section 
       id="tech"
@@ -58,10 +62,10 @@ export const TechStack: React.FC = () => {
       className="pt-6 pb-8 px-4 xs:px-8 border-b border-dashed border-white/10"
     >
       <h2 className="text-2xl xs:text-3xl text-neutral-100 italic font-instrument font-normal">
-        Tech Stack
+        {t.techTitle}
       </h2>
       <p className="mt-1 mb-6 max-w-2xl text-sm leading-6 text-neutral-400">
-        Primary technologies I rely on for architecting resilient backend services, responsive interfaces, and automated cloud workflows.
+        {t.techSubtitle}
       </p>
 
       {/* Marquee Container with Gradient Edge Fades */}
@@ -94,7 +98,7 @@ export const TechStack: React.FC = () => {
                     {tech.name}
                   </p>
                   <p className="text-[10px] text-neutral-500 font-mono">
-                    {tech.category}
+                    {language === 'vi' ? tech.categoryVi || tech.category : tech.category}
                   </p>
                 </div>
               </div>
@@ -126,7 +130,7 @@ export const TechStack: React.FC = () => {
                     {tech.name}
                   </p>
                   <p className="text-[10px] text-neutral-500 font-mono">
-                    {tech.category}
+                    {language === 'vi' ? tech.categoryVi || tech.category : tech.category}
                   </p>
                 </div>
               </div>

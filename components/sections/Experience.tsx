@@ -4,10 +4,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Calendar } from 'lucide-react';
 import { EXPERIENCES } from '@/data/cv-data';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const Experience: React.FC = () => {
-  // Default open the first and second experience
   const [openIds, setOpenIds] = useState<string[]>(['hongthai', 'fpt-software-fs']);
+  const { language, t } = useLanguage();
 
   const toggleAccordion = (id: string) => {
     setOpenIds((prev) =>
@@ -26,16 +27,19 @@ export const Experience: React.FC = () => {
     >
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-2xl xs:text-3xl text-neutral-100 italic font-instrument font-normal">
-          Professional Experience
+          {t.experienceTitle}
         </h2>
         <span className="text-xs text-neutral-500 uppercase tracking-wider font-mono">
-          4+ Years In Tech
+          {t.experienceYears}
         </span>
       </div>
 
       <div className="divide-y divide-white/10">
         {EXPERIENCES.map((exp) => {
           const isOpen = openIds.includes(exp.id);
+          const roleDisplay = language === 'vi' ? exp.roleVi || exp.role : exp.role;
+          const summaryDisplay = language === 'vi' ? exp.summaryVi || exp.summary : exp.summary;
+          const periodDisplay = language === 'vi' ? exp.periodVi || exp.period : exp.period;
 
           return (
             <div key={exp.id} className="py-2.5">
@@ -62,14 +66,14 @@ export const Experience: React.FC = () => {
                         {exp.company}
                       </p>
                       <p className="text-[13px] text-neutral-400">
-                        {exp.role}
+                        {roleDisplay}
                       </p>
                     </div>
 
                     <div className="flex items-center gap-2 self-start sm:self-auto sm:ml-auto">
                       <span className="text-[12px] text-neutral-400 font-mono flex items-center gap-1">
                         <Calendar className="h-3 w-3 opacity-60" />
-                        {exp.period}
+                        {periodDisplay}
                       </span>
                     </div>
                   </div>
@@ -96,9 +100,9 @@ export const Experience: React.FC = () => {
                   >
                     <div className="pt-2 pb-4 pl-3 sm:pl-14 pr-2 space-y-3.5 text-sm">
                       {/* Short summary */}
-                      {exp.summary && (
+                      {summaryDisplay && (
                         <p className="text-xs text-neutral-400 italic">
-                          {exp.summary}
+                          {summaryDisplay}
                         </p>
                       )}
 
@@ -117,19 +121,24 @@ export const Experience: React.FC = () => {
 
                       {/* Projects / Responsibilities */}
                       <ul className="space-y-2 pt-1.5 text-neutral-300 text-[13px] leading-relaxed">
-                        {exp.projects.map((proj, idx) => (
-                          <li key={idx} className="flex items-start gap-2">
-                            <span className="text-neutral-500 select-none mt-1">•</span>
-                            <div>
-                              <strong className="text-neutral-100 font-medium">
-                                {proj.title}:
-                              </strong>{' '}
-                              <span className="text-neutral-300">
-                                {proj.description}
-                              </span>
-                            </div>
-                          </li>
-                        ))}
+                        {exp.projects.map((proj, idx) => {
+                          const pTitle = language === 'vi' ? proj.titleVi || proj.title : proj.title;
+                          const pDesc = language === 'vi' ? proj.descriptionVi || proj.description : proj.description;
+
+                          return (
+                            <li key={idx} className="flex items-start gap-2">
+                              <span className="text-neutral-500 select-none mt-1">•</span>
+                              <div>
+                                <strong className="text-neutral-100 font-medium">
+                                  {pTitle}:
+                                </strong>{' '}
+                                <span className="text-neutral-300">
+                                  {pDesc}
+                                </span>
+                              </div>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </motion.div>

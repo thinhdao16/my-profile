@@ -2,12 +2,14 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Phone, FileText, Check, ArrowRight } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, FileText, Check, ArrowRight, Languages } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PERSONAL_INFO } from '@/data/cv-data';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const Header: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   const handleCopyEmail = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -52,6 +54,20 @@ export const Header: React.FC = () => {
           </div>
         </motion.div>
 
+        {/* Language Switcher Pill (Top-Right of Banner) */}
+        <div className="absolute top-4 right-4 z-20">
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 backdrop-blur-md border border-white/15 text-xs font-mono text-neutral-200 hover:text-white transition-all shadow-lg hover:scale-105 active:scale-95 cursor-pointer"
+            title={language === 'vi' ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
+          >
+            <Languages className="w-3.5 h-3.5 text-emerald-400" />
+            <span className="font-semibold">
+              {language === 'vi' ? '🇬🇧 EN' : '🇻🇳 VI'}
+            </span>
+          </button>
+        </div>
+
         {/* Profile Avatar Monogram */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -68,7 +84,7 @@ export const Header: React.FC = () => {
             {/* Live Status Indicator */}
             <span 
               className="absolute bottom-1 right-1 h-4 w-4 rounded-full bg-emerald-500 ring-2 ring-[#1b1b1b]" 
-              title="Open to Work & Collaborations"
+              title={t.statusOpen}
             />
           </div>
         </motion.div>
@@ -87,13 +103,17 @@ export const Header: React.FC = () => {
           </h1>
 
           <div className="mt-1.5 flex flex-wrap items-center gap-2">
-            <span className="text-xs text-neutral-400 font-medium">Full-stack Developer</span>
+            <span className="text-xs text-neutral-300 font-medium">
+              {language === 'vi' ? PERSONAL_INFO.titleVi : PERSONAL_INFO.title}
+            </span>
             <span className="h-1 w-1 rounded-full bg-neutral-500"></span>
-            <span className="text-xs text-neutral-400">4+ Years Exp</span>
+            <span className="text-xs text-neutral-400">{t.experienceYears}</span>
             <span className="h-1 w-1 rounded-full bg-neutral-500"></span>
             <span className="text-xs text-neutral-400">.NET 8 & React</span>
             <span className="h-1 w-1 rounded-full bg-neutral-500"></span>
-            <span className="text-xs text-neutral-400">{PERSONAL_INFO.location}</span>
+            <span className="text-xs text-neutral-400">
+              {language === 'vi' ? PERSONAL_INFO.location : PERSONAL_INFO.locationEn}
+            </span>
           </div>
 
           <button 
@@ -101,7 +121,7 @@ export const Header: React.FC = () => {
             onClick={scrollToProjects}
             className="group cursor-pointer mt-3.5 inline-flex items-center text-xs text-neutral-300 transition-colors hover:text-white focus:outline-none"
           >
-            See projects 
+            {t.seeProjects}
             <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
@@ -136,8 +156,8 @@ export const Header: React.FC = () => {
           <button 
             type="button"
             onClick={handleCopyEmail}
-            aria-label="Copy Email" 
-            title={copied ? "Email copied!" : "Copy: " + PERSONAL_INFO.email}
+            aria-label={t.copyEmail} 
+            title={copied ? t.copied : `${t.copyEmail}: ${PERSONAL_INFO.email}`}
             className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-white/10 p-2 text-neutral-300 transition-colors hover:bg-white/20 hover:text-white focus:outline-none relative"
           >
             {copied ? <Check className="h-4 w-4 text-emerald-400" /> : <Mail className="h-4 w-4" />}
@@ -159,7 +179,7 @@ export const Header: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Resume / CV" 
-            title="Download / View Dao Duc Thinh CV (PDF)"
+            title={t.resumePdf}
             className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-white/10 p-2 text-neutral-300 transition-colors hover:bg-white/20 hover:text-white focus:outline-none"
           >
             <FileText className="h-4 w-4" />

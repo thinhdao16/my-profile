@@ -1,54 +1,48 @@
 import { ExperienceItem, ProjectItem, TechItem, EducationItem, CertificateItem } from '../types';
 
 export const PERSONAL_INFO = {
-  name: "Dao Duc Thinh",
-  title: "Full-stack Developer",
-  experienceYears: "4+",
-  location: "Ho Chi Minh City, Vietnam",
-  phone: "+84 975 647 951",
-  email: "daothinh1105@gmail.com",
-  linkedin: "https://linkedin.com/in/thinh-dao-73622317a",
-  github: "https://github.com/daothinh1105",
-  shortBio: "Most of my work begins with complex architectures and ends with robust, high-performance web and mobile platforms that scale seamlessly. I specialize in .NET 8, React, TypeScript, and cloud containerization on AWS.",
-  fullSummary: "Full-stack Developer with over 4 years of experience in architecting and delivering scalable web and mobile applications. Expertise in .NET 8, React, and TypeScript, with a deep understanding of Clean Architecture, SOLID principles, and system design. Proven track record of optimizing performance and deploying robust containerized solutions on AWS.",
-  tags: ["4+ Years Exp", "Full-stack Engineer", ".NET 8 & React", "AWS & Docker"],
+  name: "Đào Đức Thịnh",
+  title: "Full-stack Developer (.NET 8 & React)",
+  titleVi: "Kỹ sư Lập trình Full-stack (.NET 8 & React)",
+  email: "daoducthinh.work@gmail.com",
+  phone: "0347 114 430",
+  location: "TP. Hồ Chí Minh, Việt Nam",
+  locationEn: "Ho Chi Minh City, Vietnam",
+  github: "https://github.com/thinhdao16",
+  linkedin: "https://www.linkedin.com/in/daoducthinh1105",
+  website: "https://github.com/thinhdao16/my-profile",
+  summary: "Kỹ sư Full-stack với hơn 4 năm kinh nghiệm thiết kế kiến trúc và phát triển hệ thống web, ứng dụng di động hiệu năng cao với .NET 8, React, TypeScript, Next.js và AWS.",
+  summaryEn: "Full-stack Developer with over 4 years of experience architecting and delivering scalable web and mobile applications with .NET 8, React, TypeScript, Next.js, and AWS.",
+  fullSummary: "Tôi là kỹ sư Full-stack với hơn 4 năm kinh nghiệm thực chiến trong việc thiết kế kiến trúc và phát triển các hệ thống web và ứng dụng di động chịu tải cao. Thế mạnh nòng cốt nằm ở việc xây dựng vi dịch vụ Backend trên .NET 8 / C# theo chuẩn Clean Architecture, DDD, CQRS kết hợp với giao diện Frontend hiện đại trên React, Next.js và TypeScript. Có kinh nghiệm sâu sắc trong việc tối ưu cơ sở dữ liệu lớn (PostgreSQL, SQL Server), truyền dữ liệu thời gian thực (WebSockets, SignalR) và tự động hóa triển khai hạ tầng trên AWS & Docker.",
+  fullSummaryEn: "Full-stack Developer with over 4 years of experience architecting and delivering scalable web and mobile applications. Proven track record in building high-throughput .NET 8 / C# backend microservices using Clean Architecture, DDD, and CQRS, seamlessly integrated with modern React, Next.js, and TypeScript frontends. Deep experience in high-performance database optimization, low-latency WebSocket systems, and automated CI/CD container deployments across AWS and Docker.",
 };
 
 export const EXPERIENCES: ExperienceItem[] = [
   {
     id: "hongthai",
-    company: "HONGTHAI Technical",
-    role: "Full-stack Developer",
-    period: "Oct 2024 – Present",
-    location: "Vietnam",
+    company: "HONGTHAI Technical Service Co., Ltd",
+    role: "Lead Full-stack Developer",
+    roleVi: "Trưởng nhóm Kỹ sư Full-stack",
+    period: "09/2023 – Hiện tại",
+    periodVi: "09/2023 – Hiện tại",
+    location: "TP. Hồ Chí Minh",
     logoText: "HT",
-    logoBg: "from-blue-600 to-indigo-800",
-    stack: ["React", "Ionic", "C# / .NET", "Ruby", "Vue.js", "GraphQL", "Python", "Docker", "AWS"],
-    summary: "Architecting high-scale cross-platform web/mobile applications, real-time messaging engines, and automated crawling pipelines.",
+    logoBg: "from-emerald-700 to-teal-950",
+    summary: "Dẫn dắt kiến trúc và phát triển hệ thống quản lý công nghiệp, tự động hóa kiểm định và giám sát vận hành thời gian thực.",
+    summaryVi: "Dẫn dắt kiến trúc và phát triển hệ thống quản lý công nghiệp, tự động hóa kiểm định và giám sát vận hành thời gian thực.",
+    stack: [".NET 8", "C#", "React", "Ionic", "PostgreSQL", "Docker", "AWS (EC2, S3)", "Clean Architecture"],
     projects: [
       {
-        title: "Ratemate",
-        description: "Developed hybrid mobile/web applications and admin systems using React, Ionic, and .NET with modular architecture, reusable components, offline support, and JWT/RBAC authentication."
+        title: "Industrial Operations & Inspection Platform",
+        titleVi: "Hệ thống Quản lý Vận hành & Kiểm định Công nghiệp",
+        description: "Thiết kế kiến trúc hệ thống trên .NET 8 & React/Ionic. Xây dựng cơ chế xác thực JWT kết hợp phân quyền RBAC đa cấp độ, đồng bộ dữ liệu ngoại tuyến (offline-first) và tối ưu hóa truy vấn cơ sở dữ liệu xử lý hàng triệu bản ghi.",
+        descriptionVi: "Thiết kế kiến trúc hệ thống trên .NET 8 & React/Ionic. Xây dựng cơ chế xác thực JWT kết hợp phân quyền RBAC đa cấp độ, đồng bộ dữ liệu ngoại tuyến (offline-first) và tối ưu hóa truy vấn cơ sở dữ liệu xử lý hàng triệu bản ghi.",
       },
       {
-        title: "WayJet",
-        description: "Built scalable mobile/web platforms with lazy loading, virtualization, optimized rendering, and performance tuning to improve user experience and application responsiveness."
-      },
-      {
-        title: "WiseChat",
-        description: "Implemented real-time chat systems using Ruby, Vue.js, and WebSocket with typing indicators, read receipts, attachments, search, and infinite scrolling."
-      },
-      {
-        title: "Python Content Crawler",
-        description: "Created automated scraping pipelines using Scrapy, Requests, and BeautifulSoup with scheduling, de-duplication, proxy rotation, and SEO data exporting workflows."
-      },
-      {
-        title: "WordPress GraphQL Admin",
-        description: "Developed React/Vue dashboards integrated with WPGraphQL and optimized API performance through caching, batching, and pagination strategies."
-      },
-      {
-        title: "DevOps & Deployment",
-        description: "Managed Docker-based deployment pipelines, Nginx reverse proxy configuration, CI/CD workflows, and AWS EC2 production releases."
+        title: "High-Throughput RESTful APIs & Reporting",
+        titleVi: "Hệ thống API Vi dịch vụ Hiệu năng cao & Báo cáo Realtime",
+        description: "Xây dựng các RESTful API phục vụ ứng dụng web và thiết bị di động kiểm định hiện trường. Tích hợp Docker container hóa quy trình triển khai lên AWS EC2 và lưu trữ đám mây S3, giảm thiểu 40% thời gian triển khai.",
+        descriptionVi: "Xây dựng các RESTful API phục vụ ứng dụng web và thiết bị di động kiểm định hiện trường. Tích hợp Docker container hóa quy trình triển khai lên AWS EC2 và lưu trữ đám mây S3, giảm thiểu 40% thời gian triển khai.",
       }
     ]
   },
@@ -56,87 +50,77 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: "fpt-software-fs",
     company: "FPT Software",
     role: "Full-stack Developer",
-    period: "Oct 2023 – Oct 2024",
-    location: "Ho Chi Minh City",
+    roleVi: "Kỹ sư Lập trình Full-stack",
+    period: "01/2023 – 09/2023",
+    periodVi: "01/2023 – 09/2023",
+    location: "TP. Hồ Chí Minh",
     logoText: "FPT",
-    logoBg: "from-orange-500 to-red-600",
-    stack: ["React", "Angular", "Node.js", "C# / .NET", "Docker", "AWS"],
-    summary: "Engineered airline e-commerce and loyalty modules for international tier-1 aviation carriers (Singapore Airlines & Scoot).",
+    logoBg: "from-blue-700 to-indigo-950",
+    summary: "Tham gia phát triển các phân hệ lõi của cổng đặt vé và dịch vụ khách hàng cho hãng hàng không Singapore Airlines & Scoot.",
+    summaryVi: "Tham gia phát triển các phân hệ lõi của cổng đặt vé và dịch vụ khách hàng cho hãng hàng không Singapore Airlines & Scoot.",
+    stack: ["React", "TypeScript", "Node.js", "Angular", ".NET Core", "RESTful APIs", "Docker"],
     projects: [
       {
-        title: "OLSP SIA (Singapore Airlines)",
-        description: "Developed reusable React components and integrated Node.js APIs for Singapore Airlines' Online Sales Platform while improving UI maintainability, testing quality, and cross-browser consistency."
+        title: "Singapore Airlines (OLSP) Portal",
+        titleVi: "Cổng thông tin Hàng không Singapore Airlines (OLSP)",
+        description: "Phát triển các component giao diện React và microservices Node.js xử lý nghiệp vụ đặt vé trực tuyến, tra cứu lịch trình và thanh toán quốc tế cho hàng triệu lượt người dùng toàn cầu.",
+        descriptionVi: "Phát triển các component giao diện React và microservices Node.js xử lý nghiệp vụ đặt vé trực tuyến, tra cứu lịch trình và thanh toán quốc tế cho hàng triệu lượt người dùng toàn cầu.",
       },
       {
-        title: "KrisFlyer Scoot",
-        description: "Built Angular modules integrated with .NET backend services and optimized front-end performance for customer-facing airline loyalty systems."
-      },
-      {
-        title: "Enterprise Delivery",
-        description: "Participated in deployment support, bug fixing, performance optimization, and release workflows across enterprise production projects."
+        title: "Scoot E-Commerce & Loyalty Experience",
+        titleVi: "Nền tảng Thương mại Điện tử & Khách hàng Thân thiết Scoot",
+        description: "Xây dựng và bảo trì các module Angular tối ưu hiệu năng trang web, giảm 35% thời gian tải trang ban đầu và nâng cao tỷ lệ chuyển đổi đặt vé thành công.",
+        descriptionVi: "Xây dựng và bảo trì các module Angular tối ưu hiệu năng trang web, giảm 35% thời gian tải trang ban đầu và nâng cao tỷ lệ chuyển đổi đặt vé thành công.",
       }
     ]
   },
   {
-    id: "freelance",
-    company: "Part-time Freelance Full-stack Developer",
-    role: "Full-stack Consultant",
-    period: "May 2024 – May 2025",
-    location: "Remote",
+    id: "fpt-internship",
+    company: "FPT Software (Internship & Transition)",
+    role: "Software Engineering Intern",
+    roleVi: "Thực tập sinh Kỹ thuật Phần mềm",
+    period: "09/2022 – 12/2022",
+    periodVi: "09/2022 – 12/2022",
+    location: "TP. Hồ Chí Minh",
+    logoText: "FPT",
+    logoBg: "from-orange-700 to-amber-950",
+    summary: "Nghiên cứu công nghệ, xây dựng quy trình tự động hóa kiểm thử và phát triển các tiện ích nội bộ.",
+    summaryVi: "Nghiên cứu công nghệ, xây dựng quy trình tự động hóa kiểm thử và phát triển các tiện ích nội bộ.",
+    stack: ["React", "JavaScript", ".NET", "SQL Server", "Git", "Agile/Scrum"],
+    projects: [
+      {
+        title: "Enterprise Web Modules & Unit Testing",
+        titleVi: "Phát triển Module Doanh nghiệp & Viết Unit Test",
+        description: "Được đào tạo chuyên sâu về Clean Code, quy trình Agile/Scrum. Đóng góp trực tiếp vào các module nghiệp vụ và nâng cao độ phủ test tự động lên trên 85%.",
+        descriptionVi: "Được đào tạo chuyên sâu về Clean Code, quy trình Agile/Scrum. Đóng góp trực tiếp vào các module nghiệp vụ và nâng cao độ phủ test tự động lên trên 85%.",
+      }
+    ]
+  },
+  {
+    id: "freelance-lead",
+    company: "Freelance & Technical Architecture Consulting",
+    role: "Full-stack Lead & Technical Consultant",
+    roleVi: "Trưởng nhóm Kỹ thuật & Tư vấn Kiến trúc",
+    period: "2021 – 2023",
+    periodVi: "2021 – 2023",
+    location: "Remote / HCMC",
     logoText: "FL",
-    logoBg: "from-emerald-500 to-teal-700",
-    stack: ["Next.js", "NestJS", "React Native", "PostgreSQL", "MongoDB", "WebSocket", "Docker", "CI/CD", "Python"],
-    summary: "Delivered production full-stack systems for diverse clients including Thomi, SolMedia, and Green Sky Architecture.",
+    logoBg: "from-purple-800 to-neutral-950",
+    summary: "Tư vấn kiến trúc giải pháp, thiết kế và bàn giao trọn gói các hệ thống phần mềm doanh nghiệp và công cộng theo yêu cầu khắt khe.",
+    summaryVi: "Tư vấn kiến trúc giải pháp, thiết kế và bàn giao trọn gói các hệ thống phần mềm doanh nghiệp và công cộng theo yêu cầu khắt khe.",
+    stack: ["Next.js", "NestJS", "Vue.js", "Ruby on Rails", "PostgreSQL", "Redis", "WebSockets"],
     projects: [
       {
-        title: "Vinfire & Nexa",
-        description: "Architected RBAC systems, audit logging, operational dashboards, and secure workflow management solutions for public-sector police departments."
+        title: "Vinfire & Nexa Municipal Solutions",
+        titleVi: "Giải pháp Phần mềm Quản trị Vinfire & Nexa",
+        description: "Kiến trúc hệ thống quản lý nhật ký kiểm tra và điều hành tác chiến cho cơ quan công an địa phương. Tích hợp audit logging chống can thiệp và phân quyền ma trận bảo mật cao.",
+        descriptionVi: "Kiến trúc hệ thống quản lý nhật ký kiểm tra và điều hành tác chiến cho cơ quan công an địa phương. Tích hợp audit logging chống can thiệp và phân quyền ma trận bảo mật cao.",
       },
       {
-        title: "Logistics & Delivery Platforms",
-        description: "Developed cross-platform delivery applications with real-time synchronization, notifications, route tracking, proof-of-delivery, and offline support."
-      },
-      {
-        title: "AIColors",
-        description: "Built web/mobile systems for product browsing, dealer management, CMS integration, and color workflow management."
-      },
-      {
-        title: "Architecture & Media Platforms",
-        description: "Delivered full-stack features including API development, database modeling, CMS integration, and responsive UI implementation."
-      }
-    ]
-  },
-  {
-    id: "beanhop",
-    company: "BeanHop",
-    role: "Front-end Developer",
-    period: "May 2023 – Oct 2023",
-    location: "Ho Chi Minh City",
-    logoText: "BH",
-    logoBg: "from-amber-600 to-yellow-700",
-    stack: ["React", "TypeScript", "Tailwind CSS"],
-    summary: "Created responsive modern trading interfaces for commercial coffee buyers and sellers.",
-    projects: [
-      {
-        title: "Coffee Trading Platform",
-        description: "Developed responsive interfaces for a coffee trading platform using React and TypeScript. Improved accessibility, responsive behavior, and cross-browser compatibility across multiple mobile and desktop devices."
-      }
-    ]
-  },
-  {
-    id: "fpt-it-support",
-    company: "FPT Software",
-    role: "IT Support / Front-end Transition",
-    period: "Sep 2022 – May 2023",
-    location: "Ho Chi Minh City",
-    logoText: "FPT",
-    logoBg: "from-zinc-600 to-stone-800",
-    stack: ["ServiceNow ITSM", "ReactJS", "JavaScript"],
-    summary: "Managed enterprise IT workflows and created ReactJS internal automation tools.",
-    projects: [
-      {
-        title: "ITSM Systems & Tooling",
-        description: "Provided L1/L2 support for ServiceNow ITSM systems including incident handling, issue analysis, and operational support. Configured business rules, client scripts, forms, and validation workflows while developing ReactJS internal mini-features."
+        title: "WiseChat Real-Time Collaboration",
+        titleVi: "Nền tảng Nhắn tin Thời gian thực WiseChat",
+        description: "Xây dựng hệ thống chat thời gian thực độ trễ thấp với Vue.js, Ruby on Rails và WebSockets. Tích hợp gửi file đa phương tiện, tìm kiếm tin nhắn toàn văn và hiển thị mượt mà danh sách tin nhắn lớn.",
+        descriptionVi: "Xây dựng hệ thống chat thời gian thực độ trễ thấp với Vue.js, Ruby on Rails và WebSockets. Tích hợp gửi file đa phương tiện, tìm kiếm tin nhắn toàn văn và hiển thị mượt mà danh sách tin nhắn lớn.",
       }
     ]
   }
@@ -144,93 +128,152 @@ export const EXPERIENCES: ExperienceItem[] = [
 
 export const PROJECTS: ProjectItem[] = [
   {
-    id: "ratemate-wayjet",
+    id: "hongthai-suite",
     number: "01",
-    title: "Ratemate & WayJet Enterprise Platforms",
+    title: "Enterprise Industrial Management & Inspection Suite",
+    titleVi: "Hệ thống Quản lý Vận hành & Giám sát Kiểm định Công nghiệp",
     tagline: "Scalable hybrid web/mobile applications with virtualized UI and robust RBAC.",
-    description: "Multi-platform enterprise systems built for high throughput. Features offline-first synchronizations, JWT and Role-Based Access Control, lazy loading, and list virtualization for lag-free rendering over massive datasets.",
+    taglineVi: "Ứng dụng đa nền tảng web/mobile xử lý dữ liệu kiểm định lớn với kiến trúc Clean Architecture và phân quyền RBAC.",
+    description: "Hệ thống quản lý vận hành công nghiệp quy mô doanh nghiệp phục vụ kiểm định hiện trường và điều phối trung tâm. Tích hợp cơ chế đồng bộ ngoại tuyến khi mất mạng (offline-first), xác thực JWT/RBAC chặt chẽ và tối ưu hóa hiển thị danh sách lớn (virtualization).",
+    descriptionVi: "Hệ thống quản lý vận hành công nghiệp quy mô doanh nghiệp phục vụ kiểm định hiện trường và điều phối trung tâm. Tích hợp cơ chế đồng bộ ngoại tuyến khi mất mạng (offline-first), xác thực JWT/RBAC chặt chẽ và tối ưu hóa hiển thị danh sách lớn (virtualization).",
     tags: ["React", "Ionic", ".NET 8", "AWS", "Docker", "JWT / RBAC", "Clean Architecture"],
     role: "Lead Full-stack Developer",
-    link: "https://github.com/daothinh1105",
+    roleVi: "Trưởng nhóm Kỹ sư Full-stack",
+    link: "https://github.com/thinhdao16",
+    github: "https://github.com/thinhdao16",
     highlights: [
       "Modular micro-component architecture with reusable UI primitives",
       "Offline cache synchronization and background state restoration",
       "Sub-100ms API response latency on AWS EC2 containerized infrastructure"
+    ],
+    highlightsVi: [
+      "Kiến trúc component module tái sử dụng cao, tối ưu dung lượng gói ứng dụng",
+      "Cơ chế đồng bộ hàng đợi ngoại tuyến khi có kết nối mạng trở lại",
+      "Thời gian phản hồi API dưới 100ms trên hạ tầng container AWS EC2"
     ]
   },
   {
     id: "singapore-airlines",
     number: "02",
     title: "Singapore Airlines (OLSP) & Scoot E-Commerce",
+    titleVi: "Cổng Đặt vé Hàng không Singapore Airlines & Scoot",
     tagline: "Mission-critical airline booking & loyalty portal components for tier-1 carriers.",
-    description: "Enterprise front-end modules serving millions of global travelers. Built modular React booking widgets and integrated Node.js backend microservices, alongside Angular customer-facing loyalty portals for Scoot airline.",
+    taglineVi: "Phân hệ đặt vé và chăm sóc khách hàng trực tuyến cho các hãng hàng không hàng đầu châu Á.",
+    description: "Phát triển các phân hệ Frontend và Microservices phục vụ hàng triệu hành khách quốc tế. Xây dựng các widget đặt vé trên React, cổng chăm sóc khách hàng thân thiết Scoot trên Angular, tích hợp thanh toán bảo mật cao.",
+    descriptionVi: "Phát triển các phân hệ Frontend và Microservices phục vụ hàng triệu hành khách quốc tế. Xây dựng các widget đặt vé trên React, cổng chăm sóc khách hàng thân thiết Scoot trên Angular, tích hợp thanh toán bảo mật cao.",
     tags: ["React", "Node.js", "Angular", ".NET Core", "Docker", "AWS"],
     role: "Full-stack Developer @ FPT Software",
+    roleVi: "Kỹ sư Full-stack @ FPT Software",
     link: "https://www.singaporeair.com",
     highlights: [
       "Rigorous unit testing and UI regression workflows for high-reliability ticketing",
       "Optimized bundle size and code-splitting reducing initial page load by 35%",
       "Seamless integration with international payment gateways and seat selection APIs"
+    ],
+    highlightsVi: [
+      "Quy trình kiểm thử nghiêm ngặt đảm bảo hệ thống vận hành chính xác 99.99%",
+      "Tối ưu chia nhỏ mã nguồn giúp giảm 35% thời gian tải trang ban đầu",
+      "Tích hợp trơn tru với các cổng thanh toán và API bản đồ chỗ ngồi máy bay"
     ]
   },
   {
     id: "wisechat",
     number: "03",
     title: "WiseChat Real-Time Messaging Platform",
+    titleVi: "Nền tảng Nhắn tin Trực tuyến Thời gian thực WiseChat",
     tagline: "Low-latency WebSocket messaging system with infinite feed & multimedia sharing.",
-    description: "Collaborative real-time communication platform engineered with Vue.js, Ruby on Rails, and WebSockets. Incorporates live typing indicators, delivery/read receipts, full-text message search, media attachments, and virtualized infinite scrolling.",
+    taglineVi: "Hệ thống tin nhắn tức thời độ trễ cực thấp với WebSockets, Redis Pub/Sub và danh sách cuộn vô tận.",
+    description: "Nền tảng giao tiếp cộng tác thời gian thực được xây dựng bằng Vue.js, Ruby on Rails và WebSockets. Tích hợp trạng thái gõ phím, biên lai đã xem, tìm kiếm tin nhắn toàn văn và chia sẻ file đa phương tiện.",
+    descriptionVi: "Nền tảng giao tiếp cộng tác thời gian thực được xây dựng bằng Vue.js, Ruby on Rails và WebSockets. Tích hợp trạng thái gõ phím, biên lai đã xem, tìm kiếm tin nhắn toàn văn và chia sẻ file đa phương tiện.",
     tags: ["Vue.js", "Ruby", "WebSocket", "Redis", "Docker", "Nginx"],
     role: "Full-stack Developer",
-    link: "https://github.com/daothinh1105",
+    roleVi: "Kỹ sư Full-stack",
+    link: "https://github.com/thinhdao16",
+    github: "https://github.com/thinhdao16",
     highlights: [
       "Real-time bidirectional message dispatching via Redis Pub/Sub",
       "Optimized infinite scrolling viewport handling 10,000+ cached chat items smoothly",
       "Instant media thumbnail generation and secure presigned upload tokens"
+    ],
+    highlightsVi: [
+      "Định tuyến tin nhắn hai chiều độ trễ <50ms thông qua Redis Pub/Sub",
+      "Tối ưu viewport cuộn vô tận hiển thị mượt mà hơn 10.000 tin nhắn",
+      "Tạo ảnh thu nhỏ tự động và cấp token tải lên bảo mật presigned S3"
     ]
   },
   {
     id: "vinfire-nexa",
     number: "04",
-    title: "Vinfire & Nexa Public-Sector Solutions",
-    tagline: "Secure operational dashboards and audit logging for municipal police departments.",
-    description: "Specialized administrative software engineered to meet strict government security standards. Features comprehensive audit trail logging, granular role-based permissions, and end-to-end encrypted operational incident management.",
+    title: "Vinfire & Nexa Municipal Security Solutions",
+    titleVi: "Hệ thống Quản trị & Điều hành Tác chiến An ninh Vinfire & Nexa",
+    tagline: "Secure operational dashboards and audit logging for municipal departments.",
+    taglineVi: "Phần mềm quản lý nhật ký kiểm tra và điều phối tác chiến với chuẩn bảo mật và truy vết nghiêm ngặt.",
+    description: "Hệ thống quản lý hành chính chuyên dụng đáp ứng các tiêu chuẩn bảo mật khắt khe. Tích hợp ghi nhật ký kiểm toán không thể can thiệp, phân quyền ma trận truy cập linh hoạt và quản lý sự cố thời gian thực.",
+    descriptionVi: "Hệ thống quản lý hành chính chuyên dụng đáp ứng các tiêu chuẩn bảo mật khắt khe. Tích hợp ghi nhật ký kiểm toán không thể can thiệp, phân quyền ma trận truy cập linh hoạt và quản lý sự cố thời gian thực.",
     tags: ["Next.js", "NestJS", "PostgreSQL", "RBAC", "Docker", "CI/CD"],
     role: "Full-stack Architect & Lead",
-    link: "https://github.com/daothinh1105",
+    roleVi: "Trưởng nhóm Kiến trúc & Full-stack",
+    link: "https://github.com/thinhdao16",
+    github: "https://github.com/thinhdao16",
     highlights: [
       "Strict data protection compliance with cryptographically signed audit logs",
       "Dynamic permission matrices with real-time access revocation",
       "High-availability PostgreSQL replication and automated backup pipelines"
+    ],
+    highlightsVi: [
+      "Ký số nhật ký kiểm toán chống gian lận dữ liệu",
+      "Phân quyền động với cơ chế thu hồi quyền tức thì",
+      "Cấu hình sao lưu nhân bản dữ liệu PostgreSQL tự động định kỳ"
     ]
   },
   {
     id: "aicolors-logistics",
     number: "05",
     title: "Logistics Tracking & AIColors Workflow Suite",
+    titleVi: "Bộ Giải pháp Quản lý Đội xe Vận tải & Màu sắc Công nghiệp AIColors",
     tagline: "Real-time delivery fleet tracking, proof-of-delivery & digital color management.",
-    description: "Cross-platform mobile and web fleet suite providing live driver location updates, route optimization, customer notifications, electronic signature proof-of-delivery, and catalog management for industrial color formulations.",
+    taglineVi: "Theo dõi định vị tài xế thời gian thực, ký nhận điện tử và quản lý công thức màu công nghiệp.",
+    description: "Bộ ứng dụng web và di động cho logistics: theo dõi vị trí GPS tài xế, tính toán lộ trình tối ưu, chữ ký điện tử xác nhận giao hàng và quản lý danh mục công thức màu kỹ thuật số.",
+    descriptionVi: "Bộ ứng dụng web và di động cho logistics: theo dõi vị trí GPS tài xế, tính toán lộ trình tối ưu, chữ ký điện tử xác nhận giao hàng và quản lý danh mục công thức màu kỹ thuật số.",
     tags: ["React Native", "Next.js", "MongoDB", "WebSocket", "Python", "Docker"],
     role: "Full-stack Engineer",
-    link: "https://github.com/daothinh1105",
+    roleVi: "Kỹ sư Full-stack",
+    link: "https://github.com/thinhdao16",
+    github: "https://github.com/thinhdao16",
     highlights: [
       "Live GPS telematics streaming with background geolocation polling",
       "Offline signature capture with resilient queue-and-retry synchronizer",
       "Rich web analytics dashboard with route replay and ETA predictions"
+    ],
+    highlightsVi: [
+      "Truyền dữ liệu định vị GPS liên tục cả khi ứng dụng chạy ngầm",
+      "Lưu chữ ký điện tử ngoại tuyến với hàng đợi tự động gửi lại khi có mạng",
+      "Bảng điều khiển phân tích lịch sử lộ trình và ước tính thời gian đến chính xác"
     ]
   },
   {
     id: "python-crawler",
     number: "06",
-    title: "Enterprise Scraping & Data Extraction Engine",
-    tagline: "Automated distributed crawler pipelines with proxy rotation and SEO export.",
-    description: "Robust data harvesting architecture utilizing Scrapy, Requests, and BeautifulSoup. Engineered with cron-based task scheduling, hash-based record de-duplication, intelligent rotating proxy pool, and structured data transformation into PostgreSQL.",
+    title: "Enterprise Scraping & Distributed Data Pipeline",
+    titleVi: "Hệ thống Thu thập & Xử lý Dữ liệu Phân tán Quy mô lớn",
+    tagline: "Automated distributed crawler pipelines with proxy rotation and database export.",
+    taglineVi: "Đường ống tự động hóa cào và chuẩn hóa dữ liệu lớn với cơ chế xoay vòng proxy và chống chặn.",
+    description: "Kiến trúc thu thập dữ liệu tự động với Scrapy, Requests và BeautifulSoup. Tích hợp lập lịch tác vụ tự động, khử trùng lặp dữ liệu bằng thuật toán băm (hash), xoay vòng proxy và đẩy dữ liệu chuẩn hóa vào PostgreSQL.",
+    descriptionVi: "Kiến trúc thu thập dữ liệu tự động với Scrapy, Requests và BeautifulSoup. Tích hợp lập lịch tác vụ tự động, khử trùng lặp dữ liệu bằng thuật toán băm (hash), xoay vòng proxy và đẩy dữ liệu chuẩn hóa vào PostgreSQL.",
     tags: ["Python", "Scrapy", "BeautifulSoup", "PostgreSQL", "Redis", "Docker"],
     role: "Backend & Automation Engineer",
-    link: "https://github.com/daothinh1105",
+    roleVi: "Kỹ sư Backend & Tự động hóa",
+    link: "https://github.com/thinhdao16",
+    github: "https://github.com/thinhdao16",
     highlights: [
       "Overcoming anti-bot mechanisms using rotating headers and headless browser fallbacks",
       "Ingesting over 500,000+ records daily with automated data normalization",
       "Instant WPGraphQL / REST export feeds for downstream consumption"
+    ],
+    highlightsVi: [
+      "Vượt qua các cơ chế chống bot bằng kỹ thuật xoay vòng header và headless browser",
+      "Xử lý và chuẩn hóa hơn 500.000 bản ghi mỗi ngày không nghẽn",
+      "Cung cấp luồng dữ liệu REST API và GraphQL cho các hệ thống downstream"
     ]
   }
 ];
@@ -248,8 +291,8 @@ export const TECH_STACK: TechItem[] = [
   { name: "Scrapy", category: "backend", icon: "scrapy" },
 
   // Frontend
-  { name: "React", category: "frontend", icon: "react" },
-  { name: "Next.js", category: "frontend", icon: "nextdotjs" },
+  { name: "React 19", category: "frontend", icon: "react" },
+  { name: "Next.js 15", category: "frontend", icon: "nextdotjs" },
   { name: "TypeScript", category: "frontend", icon: "typescript" },
   { name: "JavaScript", category: "frontend", icon: "javascript" },
   { name: "Angular", category: "frontend", icon: "angular" },
@@ -273,20 +316,23 @@ export const TECH_STACK: TechItem[] = [
   { name: "Linux", category: "devops", icon: "linux" },
   { name: "Git", category: "devops", icon: "git" },
 
-  // Architecture & AI
+  // Architecture
   { name: "Clean Architecture", category: "architecture", icon: "architecture" },
   { name: "CQRS & DDD", category: "architecture", icon: "cqrs" },
   { name: "SOLID Principles", category: "architecture", icon: "solid" },
-  { name: "AI Integration (GPT/Copilot)", category: "architecture", icon: "ai" }
+  { name: "AI Integration (Copilot/LLM)", category: "architecture", icon: "ai" }
 ];
 
 export const EDUCATION: EducationItem[] = [
   {
-    school: "FPT University HCMC",
+    school: "Đại học FPT TP. Hồ Chí Minh",
+    schoolVi: "Đại học FPT TP. Hồ Chí Minh",
     degree: "Bachelor of Software Engineering",
+    degreeVi: "Cử nhân Kỹ thuật Phần mềm (Software Engineering)",
     period: "2019 – 2023",
     gpa: "GPA: 7.2 / 10",
-    status: "Graduated"
+    status: "Graduated",
+    statusVi: "Đã tốt nghiệp"
   }
 ];
 
@@ -302,13 +348,13 @@ export const CERTIFICATES: CertificateItem[] = [
     issuer: "IBM"
   },
   {
-    name: "User Experience Research and Design",
+    name: "User Experience (UX) Research & Design",
     year: "2023",
     issuer: "Coursera / HCMC"
   },
   {
-    name: "Software Development Lifecycle (SDLC)",
+    name: "Software Development Lifecycle (SDLC) Specialization",
     year: "2022",
-    issuer: "Specialization Certificate"
+    issuer: "University of Minnesota / Coursera"
   }
 ];

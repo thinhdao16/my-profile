@@ -2,12 +2,14 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Copy, Check, ArrowUpRight, Send } from 'lucide-react';
+import { Copy, Check, ArrowUpRight, Send } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PERSONAL_INFO } from '@/data/cv-data';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const ContactCTA: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const { t } = useLanguage();
 
   const handleCopyEmail = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -36,15 +38,15 @@ export const ContactCTA: React.FC = () => {
       <div className="relative z-10 text-center max-w-xl mx-auto">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#252525] border border-[#333333] text-xs font-mono text-emerald-400 mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          Currently Open to Work & Senior Roles
+          {t.statusOpen}
         </div>
 
         <h2 className="text-4xl sm:text-5xl font-instrument italic text-[#f5f5f5] mb-4">
-          Let’s build something remarkable.
+          {t.ctaTitle}
         </h2>
 
         <p className="text-sm sm:text-base text-[#999999] leading-relaxed mb-8">
-          Whether you need high-throughput .NET backend microservices, intuitive modern React/TypeScript frontends, or full-stack architectural leadership, feel free to reach out.
+          {t.ctaSubtitle}
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
@@ -54,7 +56,7 @@ export const ContactCTA: React.FC = () => {
             className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#f0f0f0] text-[#111111] font-medium text-sm hover:bg-white hover:scale-105 active:scale-95 transition-all shadow-lg shadow-white/5"
           >
             <Send className="w-4 h-4" />
-            Send an Email
+            {t.sendEmailBtn}
           </a>
 
           {/* Copy Email Button with confetti */}
@@ -66,7 +68,7 @@ export const ContactCTA: React.FC = () => {
             {copied ? (
               <>
                 <Check className="w-4 h-4 text-emerald-400" />
-                <span className="text-emerald-400">Copied!</span>
+                <span className="text-emerald-400">{t.copied}</span>
               </>
             ) : (
               <>

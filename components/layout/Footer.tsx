@@ -3,8 +3,11 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { PERSONAL_INFO } from '@/data/cv-data';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const Footer: React.FC = () => {
+  const { language, t } = useLanguage();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -15,10 +18,10 @@ export const Footer: React.FC = () => {
         {/* Left: Identity & Copyright */}
         <div className="space-y-1 text-center sm:text-left">
           <p className="text-[#888888]">
-            © {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.
+            © {new Date().getFullYear()} {PERSONAL_INFO.name}. {t.footerRights}
           </p>
           <p className="text-[#555555]">
-            Built with Next.js 15, React 19 & Tailwind CSS
+            {t.footerBuiltWith}
           </p>
         </div>
 
@@ -26,7 +29,7 @@ export const Footer: React.FC = () => {
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1.5 text-[#777777]">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            {PERSONAL_INFO.location} (UTC+7)
+            {language === 'vi' ? PERSONAL_INFO.location : PERSONAL_INFO.locationEn} (UTC+7)
           </span>
 
           <button
@@ -34,7 +37,7 @@ export const Footer: React.FC = () => {
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#222222] hover:bg-[#2c2c2c] text-[#888888] hover:text-[#dddddd] border border-[#2e2e2e] transition-all cursor-pointer"
             aria-label="Back to top"
           >
-            <span>Top</span>
+            <span>{t.top}</span>
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
         </div>
