@@ -112,7 +112,7 @@ export const FloatingNav: React.FC = () => {
           title={language === 'vi' ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
         >
           <Languages className="w-3.5 h-3.5" />
-          <span className="font-semibold">{language.toUpperCase()}</span>
+          <span className="font-semibold">{language === 'en' ? 'VI' : 'EN'}</span>
         </button>
 
         {/* Separator */}

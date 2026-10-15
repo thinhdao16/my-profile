@@ -105,7 +105,7 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('vi');
+  const [language, setLanguageState] = useState<Language>('en');
 
   useEffect(() => {
     // Check localStorage first
@@ -113,8 +113,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (saved === 'en' || saved === 'vi') {
       setLanguageState(saved);
     } else {
-      // Default to Vietnamese if browser is vi, otherwise default to vi as requested
-      setLanguageState('vi');
+      // Default to English as requested
+      setLanguageState('en');
     }
   }, []);
 
@@ -124,7 +124,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'vi' ? 'en' : 'vi');
+    setLanguage(language === 'en' ? 'vi' : 'en');
   };
 
   const value: LanguageContextType = {
@@ -144,7 +144,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    return {
+      language: 'en',
+      setLanguage: () => {},
+      toggleLanguage: () => {},
+      t: UI_TRANSLATIONS['en'],
+    };
   }
   return context;
 };
+

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Instrument_Serif, Rubik } from 'next/font/google';
+import { Providers } from '@/components/providers';
 import './globals.css';
 
 const instrumentSerif = Instrument_Serif({
@@ -22,8 +23,8 @@ const siteUrl = 'https://github.com/thinhdao16/my-profile';
 export const metadata: Metadata = {
   metadataBase: new URL('https://thinhdao16.github.io'),
   title: {
-    default: 'Đào Đức Thịnh — Full-stack Developer (.NET 8 & React)',
-    template: '%s | Đào Đức Thịnh',
+    default: 'Dao Duc Thinh — Full-stack Developer (.NET 8 & React)',
+    template: '%s | Dao Duc Thinh',
   },
   description:
     'Portfolio của Đào Đức Thịnh (Dao Duc Thinh) — Kỹ sư Full-stack hơn 4 năm kinh nghiệm thiết kế kiến trúc hệ thống .NET 8, React, Next.js 15, TypeScript, AWS, Docker và vi dịch vụ Clean Architecture.',
@@ -70,8 +71,8 @@ export const metadata: Metadata = {
       'Hơn 4 năm kinh nghiệm chuyên sâu về vi dịch vụ .NET 8, Clean Architecture, CQRS, React, Next.js và hạ tầng đám mây AWS.',
     url: siteUrl,
     siteName: 'Đào Đức Thịnh Portfolio',
-    locale: 'vi_VN',
-    alternateLocale: ['en_US'],
+    locale: 'en_US',
+    alternateLocale: ['vi_VN'],
     type: 'profile',
     images: [
       {
@@ -157,7 +158,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="vi"
+      lang="en"
       className={`dark ${instrumentSerif.variable} ${rubik.variable}`}
     >
       <head>
@@ -168,7 +169,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-[#1b1b1b] text-[#eaeaea] selection:bg-emerald-500/25 selection:text-emerald-300 font-sans antialiased overflow-x-hidden min-h-screen">
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
