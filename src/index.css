@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-color: #1b1b1b;
+    --text-primary: #ededed;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Rubik', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom selection */
+  ::selection {
+    background-color: #3f3f46;
+    color: #ffffff;
+  }
+}
+
+/* Custom font utilities */
+.font-instrument {
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+/* Diagonal hatched bands matching krisht0 */
+.diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 2px,
+    currentColor 2px,
+    currentColor 3px,
+    transparent 3px,
+    transparent 6px
+  );
+}
+
+/* Invisible scrollbar */
+.invisible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.invisible-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom dashed border */
+.border-dashed-subtle {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+}
