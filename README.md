@@ -1,6 +1,6 @@
-# Dao Duc Thinh — Modern Portfolio
+# Dao Duc Thinh — Full-stack Developer Portfolio
 
-> High-fidelity, dark-mode portfolio replica inspired by [krisht0.vercel.app](https://krisht0.vercel.app/) tailored to **Dao Duc Thinh's** professional CV.
+> Personal developer portfolio showcasing 4+ years of expertise in .NET 8, React, TypeScript, scalable cloud architectures, and modern web applications.
 
 ![Preview](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop)
 
@@ -12,7 +12,7 @@
 - **Animations**: [Framer Motion](https://www.framer.com/motion/) (Smooth accordions, tickers, floating dock, modal scale)
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Interactive FX**: [Canvas Confetti](https://www.npmjs.com/package/canvas-confetti) (Email copy celebration)
-- **Typography**: Google Fonts — *Instrument Serif* (italic editorial titles) + *Rubik* (modern clean body font)
+- **Typography**: Google Fonts — *Instrument Serif* (italic editorial titles) + *Rubik* (clean body font)
 
 ---
 
@@ -27,7 +27,7 @@ npm install
 ```bash
 npm run dev
 ```
-Open your browser at `http://localhost:5173`.
+Open your browser at `http://localhost:5173` (or the port indicated by Vite).
 
 ### 3. Production Build
 ```bash
@@ -74,7 +74,7 @@ thinh-portfolio/
 ---
 
 ## 🎨 Design Highlights & Features
-1. **Instrument Serif Italic Headings**: Faithfully mimics the distinct editorial typography of `krisht0.vercel.app`.
+1. **Editorial Typography & Dark Aesthetics**: Clean layout with Instrument Serif italic headings and Rubik body typography.
 2. **Dual-row Infinite Marquee**: Continuously animated ticker highlighting backend (.NET 8, C#, PostgreSQL, Docker, AWS) and frontend (React, TypeScript, Next.js, Vue, Angular).
 3. **Interactive Accordion**: Expandable career history covering Hong Thai Technical, FPT Software (Singapore Airlines & Scoot), Vinfire/Nexa, WiseChat, and Freelance.
 4. **Modal Deep-Dives**: Clicking any project opens an interactive popup showcasing core architectural features and measurable impact.

@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.
           </p>
           <p className="text-[#555555]">
-            Built with React, TypeScript & Tailwind CSS • Inspired by krisht0
+            Built with React, TypeScript & Tailwind CSS
           </p>
         </div>
 

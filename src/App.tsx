@@ -14,7 +14,7 @@ import { FloatingNav } from './components/FloatingNav';
 export const App: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-[#1b1b1b] text-[#eaeaea] selection:bg-emerald-500/25 selection:text-emerald-300 font-sans antialiased overflow-x-hidden">
-      {/* Side Decorative Hatched Stripes (like krisht0) */}
+      {/* Side Decorative Hatched Stripes */}
       <SideHatchBands />
 
       {/* Main Centered Container */}

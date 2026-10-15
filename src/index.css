@@ -27,7 +27,7 @@
   font-family: 'Instrument Serif', Georgia, serif;
 }
 
-/* Diagonal hatched bands matching krisht0 */
+/* Diagonal hatched bands */
 .diagonal-stripes {
   background-image: repeating-linear-gradient(
     -45deg,
